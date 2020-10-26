@@ -2,8 +2,8 @@
   <div>
     <v-container>
       <div class="row">
-        <div class="col-md-5 col-sm-5 col-xs-12">
-          <v-img :src="book.imageURL"></v-img>
+        <div class="col-md-5 col-sm-5 col-xs-12 book-pic">
+          <v-img :src="book.imageURL" max-height="480" contain></v-img>
         </div>
         <div class="col-md-7 col-sm-7 col-xs-12">
           <v-breadcrumbs class="pb-0" :items="breadcrums"></v-breadcrumbs>
@@ -137,3 +137,6 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style scoped>
+</style>
