@@ -34,13 +34,18 @@
     <v-card-title>読者のレベル感</v-card-title>
 
     <v-card-text>
-      <v-chip-group
-        v-model="selection"
-        active-class="deep-purple accent-4 white--text"
-        column
-      >
-        <v-chip>{{ this.skill }}</v-chip>
-      </v-chip-group>
+      <v-chip class="ma-2" v-if="skills.indexOf(this.skill) === 0">
+        {{ this.skill }}
+      </v-chip>
+      <v-chip class="ma-2" color="cyan" v-if="skills.indexOf(this.skill) === 1">
+        {{ this.skill }}
+      </v-chip>
+      <v-chip class="ma-2" color="primary" v-if="skills.indexOf(this.skill) === 2">
+        {{ this.skill }}
+      </v-chip>
+      <v-chip class="ma-2" color="green" v-if="skills.indexOf(this.skill) === 3">
+        {{ this.skill }}
+      </v-chip>
     </v-card-text>
 
     <v-card-actions>
