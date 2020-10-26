@@ -50,9 +50,7 @@
 
     <v-card-actions>
       <router-link
-        :to="`/${this.lang}/${this.skills.indexOf(this.skill)}/${encode(
-          this.review.title
-        )}`"
+        :to="`/${this.lang}/${this.skills.indexOf(this.skill)}/${this.review.isbn}`"
         >詳細</router-link
       >
     </v-card-actions>

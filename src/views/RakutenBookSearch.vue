@@ -58,7 +58,7 @@ export default Vue.extend({
   }),
   methods: {
     searchBook() {
-      this.searchResults = []
+      this.searchResults = [];
       axios
         .get(
           `https://app.rakuten.co.jp/services/api/BooksTotal/Search/20170404?format=json&keyword=${this.search}&applicationId=${process.env.VUE_APP_RAKUTEN_APP}`
@@ -73,12 +73,14 @@ export default Vue.extend({
                 isbn?: string;
               };
             }) => {
-              this.searchResults.push({
-                title: book.Item.title,
-                caption: book.Item.itemCaption,
-                imageURL: book.Item.largeImageUrl,
-                isbn: book.Item.isbn,
-              });
+              if (book.Item.isbn) {
+                this.searchResults.push({
+                  title: book.Item.title,
+                  caption: book.Item.itemCaption,
+                  imageURL: book.Item.largeImageUrl,
+                  isbn: book.Item.isbn,
+                });
+              }
             }
           );
         });

@@ -106,7 +106,7 @@ export default Vue.extend({
       .collection("reviews")
       .doc(this.$route.params.lang)
       .collection(this.$route.params.skill)
-      .doc(this.decode());
+      .doc(this.$route.params.id);
 
     bookDoc.get().then((doc) => {
       this.book = doc.data() as object;
