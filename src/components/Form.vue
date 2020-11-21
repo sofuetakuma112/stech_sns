@@ -110,7 +110,7 @@ export default Vue.extend({
         .collection("reviews")
         .doc(this.lang)
         .collection(String(this.skills.indexOf(this.skill)))
-        .doc(this.book.title);
+        .doc(this.book.isbn);
       titleDoc.set({
         title: this.book.title,
         imageURL: this.book.imageURL,
